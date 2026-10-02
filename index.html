@@ -110,7 +110,20 @@
       <input type="number" id="bowlen" min="0" step="0.01" placeholder="例: 0.85" oninput="onChange()"></div>
   </div>
 </div>
-
+<!-- 陸岸5海里 b.専用条件 -->
+<div class="sec-title">陸岸5海里 b.専用条件</div>
+<div class="card">
+  <div class="grid">
+    <div class="field">
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+        <input type="checkbox" id="buoyant" onchange="onChange()" style="width:auto;">
+        浮沈性安定性を有する
+      </label>
+    </div>
+    <div class="field"><label>船首高さ<span class="unit">m</span></label>
+      <input type="number" id="bowHeight" min="0" step="0.01" placeholder="例: 0.40" oninput="onChange()"></div>
+  </div>
+</div>
 <!-- コーミング・全沿海(2) -->
 <div class="sec-title">コーミング・全沿海(2)専用条件</div>
 <div class="card">
@@ -262,20 +275,7 @@ function judge(){
   if(deck==='full'){deckOk_alpha=true;deckOk_13=true;}
   else if(deck==='bow'&&ok(bowLen)){deckOk_alpha=bowLen>alphaL;deckOk_13=bowLen>0.13*L;}
 
-<!-- 陸岸5海里 b.専用条件 -->
-<div class="sec-title">陸岸5海里 b.専用条件</div>
-<div class="card">
-  <div class="grid">
-    <div class="field">
-      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
-        <input type="checkbox" id="buoyant" onchange="onChange()" style="width:auto;">
-        浮沈性安定性を有する
-      </label>
-    </div>
-    <div class="field"><label>船首高さ<span class="unit">m</span></label>
-      <input type="number" id="bowHeight" min="0" step="0.01" placeholder="例: 0.40" oninput="onChange()"></div>
-  </div>
-</div>
+
   
   // ── コーミング（ZONE1 / ZONE2(3)・ZONE3(1) は base/coef違いのみ、分母切替は共通） ──
   const r_z1=calcCoamReq(L,B,Fmm,'zone1');
