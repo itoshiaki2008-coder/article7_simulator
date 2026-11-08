@@ -391,7 +391,7 @@ const zone1_ok=coam_ok_z1||c_z1_b;
       ${crow(c_a3,`a3. L > 5m：${L}m → ${c_a3?'✓':'✗'}`)}
       ${crow(c_b, `b.  乾舷 ≥ 43+(13-12.38×(Sf+Sa))：${bTxt}`)}
       ${crow(c_c, `c.  燃料 > 180×10×PS/(1000²×0.84)：${fuelTxt}`)}
-      ${crow(c_d, `d.  コーミング ≥ 225-(112.5/50B)×(F-250B)：${coamTxt2}`)}
+      ${crow(c_d, `d.  コーミング ≥ 225-(112.5/50B)×(F-250B)：${coamTxt2}`)<br>   ()内が負数となるときは()内は0とする}
     </div>`;
 
     html+=zone_block(zone3_ok?'rz-ok':'rz-ng','ZONE 3 — 全沿海',zone3_ok?'✅':'❌',
